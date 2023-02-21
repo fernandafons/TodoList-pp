@@ -17,7 +17,7 @@ export default function App() {
   }
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: 'black'}}>
       <View style={{flexDirection: 'row', marginTop: 100}}>
         <Input 
           item={item}
