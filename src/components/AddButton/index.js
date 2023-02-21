@@ -1,14 +1,14 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-import { Button } from './styles';
+import { Button, ButtonText } from './styles';
 
 const AddButton = ({ add }) => {
 
   return (
     <>
       <Button onPress={() => add()}>
-        <Text>Add</Text>
+        <ButtonText>+</ButtonText>
       </Button>
     </>
   );

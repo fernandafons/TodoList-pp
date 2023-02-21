@@ -6,9 +6,15 @@ export const Button = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   padding: 0 20px;
-  background-color: gray;
-  height: 70px;
+  background-color: #7a297a;
+  height: 65px;
+  width: 65px;
+  margin-left: 18px;
   justify-content: center;
-  margin-left: 10px;
   border-radius: 10px;
+`;
+
+export const ButtonText = styled.Text`
+  font-size: 16px;
+  color: #fff;
 `;

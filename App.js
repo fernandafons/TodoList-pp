@@ -16,6 +16,12 @@ export default function App() {
     }
   }
 
+  const deleteItem = title => {
+    setItemsList(itemsList.filter(item => item !== title));
+  };
+
+  // useEffect(() => {}, [])
+
   return (
     <View style={{flex: 1, backgroundColor: 'black'}}>
       <View style={{flexDirection: 'row', marginTop: 100}}>
@@ -26,7 +32,7 @@ export default function App() {
         <AddButton add={add} />
       </View>
       {itemsList.map(items => (
-          <Item title={items} />
+          <Item title={items} deleteItem={deleteItem} key={items} />
       ))}
     </View>
   );
