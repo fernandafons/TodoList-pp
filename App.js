@@ -1,20 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Text, View } from 'react-native';
+import Input from './src/components/Input';
+import AddButton from './src/components/AddButton';
+import Item from './src/components/Item';
 
 export default function App() {
+  const [itemsList, setItemsList] = useState([]);
+  const [item, setItem] = useState('');
+
+  const add = () => {
+    if (item) {
+      setItemsList([...itemsList, item]);
+      setItem('');
+    }
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{flex: 1}}>
+      <View style={{flexDirection: 'row', marginTop: 100}}>
+        <Input 
+          item={item}
+          setItem={setItem}
+        />
+        <AddButton add={add} />
+      </View>
+      {itemsList.map(items => (
+          <Item title={items} />
+      ))}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
